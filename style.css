@@ -1,0 +1,28 @@
+body {
+  background: #000;
+  align-items: center;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.key {
+  border: 1px solid #555;
+  padding: 10px 15px;
+  background: #000;
+  color: gold;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-table;
+}
+
+.key:not(:last-child) {
+  margin-right: 8px
+}
+
+.drum {
+}
+
+.playing {
+  zoom: 110%;
+  border-color: gold;
+}
