@@ -9,24 +9,33 @@
 </head>
 <body>
   <div class="drum">
-    <div class="key" data-key="a">KICK<div>A</div></div>
-    <div class="key" data-key="b">HAT<div>B</div></div>
-    <div class="key" data-key="c">CLAP<div>C</div></div>
+    <div class="key" data-key="a" data-sound="./sounds/kick.mp3">KICK<div class="label">A</div></div>
+    <div class="key" data-key="b" data-sound="./sounds/hat.mp3">HAT<div class="label">B</div></div>
+    <div class="key" data-key="c" data-sound="./sounds/clap.mp3">CLAP<div class="label">C</div></div>
   </div>
 
   <script>
-    window.addEventListener('keydown', btn => {
-      let key = btn.key;
+    function start(btn) {
+      let key = btn.key || btn.target.getAttribute('data-key');
       let node = document.querySelector(`div[data-key="${key}"]`);
       if(!node) return;
+      let audio = new Audio(node.getAttribute('data-sound'));
+      audio.currentTime = 0;
+      audio.play();
       node.classList.add('playing');
-    });
-    window.addEventListener('keyup', btn => {
-      let key = btn.key;
+    }
+
+    function stop(btn) {
+      let key = btn.key || btn.target.getAttribute('data-key');
       let node = document.querySelector(`div[data-key="${key}"]`);
       if(!node) return;
       node.classList.remove('playing');
-    });
+    }
+    window.addEventListener('keydown', start);
+    window.addEventListener('mousedown', start);
+
+    window.addEventListener('keyup', stop);
+    window.addEventListener('mouseup', stop);
   </script>
 </body>
 </html>

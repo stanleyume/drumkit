@@ -1,28 +1,37 @@
 body {
-  background: #000;
+  background:url('./img/bg2.jpg');
+  background-size: cover;
   align-items: center;
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 .key {
-  border: 1px solid #555;
+  border: 3px solid #000;
   padding: 10px 15px;
-  background: #000;
+  background: #0009;
   color: gold;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
   display: inline-table;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .key:not(:last-child) {
-  margin-right: 8px
+  margin-right: 10px
+}
+.key .label {
+  color: #fff;
+  font-size: small;
 }
 
 .drum {
+  margin-top: 30%;
 }
 
 .playing {
-  zoom: 110%;
+  transform: scale(1.1, 1.1);
   border-color: gold;
 }
