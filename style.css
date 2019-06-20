@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+}
+
 body {
   background:url('./img/bg2.jpg');
   background-size: cover;
@@ -28,10 +32,11 @@ body {
 }
 
 .drum {
-  margin-top: 30%;
+  margin-top: 20%;
 }
 
 .playing {
   transform: scale(1.1, 1.1);
   border-color: gold;
+  background: #ffd7003b;
 }
